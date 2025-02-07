@@ -23,7 +23,7 @@
                     <img src="images/avatar-user.svg" alt="sg-user">
                     <div class="greeting">
                         <span class="title">Hi there</span>
-                        <p class="name">Stéphan Gabriel (@gabriel)</p>
+                        <p class="name"><a href="https://github.com/Stephan-Gabriel-SG" target="_blank">Stéphan Gabriel (@gabriel)</a></p>
                     </div>
                 </div>
             </div>
@@ -45,51 +45,53 @@
 
     <!-- SIDEBAR -->
         <div class="sidebar">
-            <div class="logo-container">
-                <img class="logo" src="icons/dashboard.svg" alt="Logo">
-                <span>Dashboard</span>
-            </div>
-            <div class="menu1">
-                <div class="menu-item">
-                    <img src="icons/home.svg" alt="Home">
-                    <span>Home</span>
+            <div class="sidebar-content">
+                <div class="logo-container">
+                    <img class="logo" src="icons/dashboard.svg" alt="Logo">
+                    <span>Dashboard</span>
                 </div>
-                <div class="menu-item">
-                    <img src="icons/profile.svg" alt="Profile">
-                    <span>Profile</span>
+                <div class="menu1">
+                    <div class="menu-item" onclick="showAlert('Home')">
+                        <img src="icons/home.svg" alt="Home">
+                        <span>Home</span>
+                    </div>
+                    <div class="menu-item"  onclick="showAlert('Profile')">
+                        <img src="icons/profile.svg" alt="Profile">
+                        <span>Profile</span>
+                    </div>
+                    <div class="menu-item" onclick="showAlert('Message')">
+                        <img src="icons/message.svg" alt="Message">
+                        <span>Messages</span>
+                    </div>
+                    <div class="menu-item" onclick="showAlert('History')">
+                        <img src="icons/history1.svg" alt="History">
+                        <span>History</span>
+                    </div>
+                    <div class="menu-item" onclick="showAlert('Tasks')">
+                        <img src="icons/task.svg" alt="Tasks">
+                        <span>Tasks</span>
+                    </div>
+                    <div class="menu-item" onclick="showAlert('Communities')">
+                        <img src="icons/comunity.svg" alt="Communities">
+                        <span>Communities</span>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <img src="icons/message.svg" alt="Message">
-                    <span>Messages</span>
+                <div class="menu2">
+                    <div class="menu-item" onclick="showAlert('Settings')">
+                        <img src="icons/setting.svg" alt="Settings">
+                        <span>Settings</span>
+                    </div>
+                    <div class="menu-item" onclick="showAlert('Support')">
+                        <img src="icons/support.svg" alt="Support">
+                        <span>Support</span>
+                    </div>
+                    <div class="menu-item" onclick="showAlert('Privacy')">
+                        <img src="icons/privacy.svg" alt="Privacy">
+                        <span>Privacy</span>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <img src="icons/history1.svg" alt="History">
-                    <span>History</span>
-                </div>
-                <div class="menu-item">
-                    <img src="icons/task.svg" alt="Tasks">
-                    <span>Tasks</span>
-                </div>
-                <div class="menu-item">
-                    <img src="icons/comunity.svg" alt="Communities">
-                    <span>Communities</span>
-                </div>
-            </div>
-            <div class="menu2">
-                <div class="menu-item">
-                    <img src="icons/setting.svg" alt="Settings">
-                    <span>Settings</span>
-                </div>
-                <div class="menu-item">
-                    <img src="icons/support.svg" alt="Support">
-                    <span>Support</span>
-                </div>
-                <div class="menu-item">
-                    <img src="icons/privacy.svg" alt="Privacy">
-                    <span>Privacy</span>
-                </div>
-            </div>
         </div>
+    </div>
     <!-- ARTICLE  -->
         <div class="article">
             <div class="article-section-1">
