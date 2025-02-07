@@ -13,6 +13,9 @@ body{
     --bg-p:#F4F6FF;
     --bg-s:#006769;
     --yellow:#F3C623;
+    --small-ico:22px;
+    --big-ico:28px;
+    --std-gap:12px;
 }
 .container{
     font-family: quicksand-medium;
@@ -22,18 +25,78 @@ body{
     grid-template: 1fr 4fr / minmax(200px, 1fr) minmax(500px, 3fr);
 }
 
-.logo-container, .menu-item{
+.logo-container, .menu-item, .search-bar, .user, .notification, .user-bubble, .nav{
     display: flex;
     align-items: center;
     cursor: pointer;
-    gap: 10px;
+    gap: 15px;
+}
+.header,.sidebar,.article{
+    padding: 15px;
 }
 
 /* HEADER */
 .header{
    grid-column: 2/3;
+   resize: both;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.section-1, .section-2{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap:var(--std-gap);
+   padding: var(--std-gap);
+   height: 95%;
+}
+.section-1 .search-bar img{
+    width: var(--small-ico);
+}
+.section-1 .search-bar input{
+    border: none;
+    width: 85%;
+    border-radius: 10px;
+    padding: 5px 8px;
+    background-color: var(--yellow);
+    font-family: quicksand-medium;
+}
+.section-1 .user img{
+    width: 70px;
+}
+.section-1 .title{
+    position: absolute;
+    font-size: small;
+}
+.section-1 .greeting,.section-2 .user-bubble, .section-2 button{
+    font-family: quicksand-bold;
 }
 
+.section-2 .notification{
+    justify-content: center;
+}
+.section-2 .user-bubble img{
+    width: 48px;
+}
+.section-2 .nav{
+    justify-content: center;
+    gap: 30px;
+}
+.section-2 button{
+    background: var(--bg-s);
+    color: var(--bg-p);
+    border: none;
+    width: 100px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.section-2 button:hover{
+    transform: translateY(-3px);
+}
+
+/* SIDEBAR */
 .logo-container{
     /* justify-content: center; */
     font-size: 2rem;
@@ -45,11 +108,9 @@ body{
     width: 15%;
 }
 
-/* SIDEBAR */
 .sidebar{
     grid-column: 1;
     grid-row: 1/4;
-    padding: 12px;
     background: var(--bg-s);
     color: white;
     font-family: quicksand-bold;
@@ -57,13 +118,13 @@ body{
 .menu1,.menu2{
     display:flex;
     flex-direction: column;
-    gap:15px;
+    gap:20px;
     padding: 20px;
 }
 .menu-item img
 {
     filter: invert(1);
-    width: 22px;
+    width: var(--small-ico);
 }
 
 /* ARTICLE */
