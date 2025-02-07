@@ -25,7 +25,7 @@ body{
     grid-template: 1fr 4fr / minmax(200px, 1fr) minmax(500px, 3fr);
 }
 
-.logo-container, .menu-item, .search-bar, .user, .notification, .user-bubble, .nav{
+.logo-container, .menu-item, .search-bar, .user, .notification, .user-bubble, .nav,.trending-items{
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -40,15 +40,16 @@ body{
    grid-column: 2/3;
    resize: both;
    display: grid;
+   background: white;
    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   box-shadow: 0px 0px 6px -1px gray;
 }
 .section-1, .section-2{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   gap:var(--std-gap);
+   gap:35px;
    padding: var(--std-gap);
-   height: 95%;
 }
 .section-1 .search-bar img{
     width: var(--small-ico);
@@ -56,6 +57,7 @@ body{
 .section-1 .search-bar input{
     border: none;
     width: 85%;
+    font-size: medium;
     border-radius: 10px;
     padding: 5px 8px;
     background-color: var(--yellow);
@@ -75,11 +77,12 @@ body{
 .section-2 .notification{
     justify-content: center;
 }
-.section-2 .user-bubble img{
+.section-2 .user-bubble img, .treding-avatar{
     width: 48px;
 }
 .section-2 .nav{
     justify-content: center;
+    padding-bottom: var(--std-gap);
     gap: 30px;
 }
 .section-2 button{
@@ -131,5 +134,30 @@ body{
 .article{
     grid-column: 2;
     grid-row: 2/4;
-    background-color: var(--yellow);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(480px, 1fr));
+}
+
+.project-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--std-gap);
+}
+.card{
+    background: white;
+    padding: var(--std-gap);
+    border-radius: 8px;
+    width: 250px;
+}
+.card-title{
+    font-weight: bold;
+}
+.card-content{
+    font-size: small;
+    margin-top: 8px;
+}
+.article-section-2{
+    display: flex;
+    flex-direction: column;
+    gap: var(--std-gap);
 }
