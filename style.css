@@ -1,0 +1,42 @@
+@font-face {
+    font-family: quicksand-bold;
+    src: url(./fonts/Quicksand-Bold.ttf);
+}
+@font-face {
+    font-family: quicksand-medium;
+    src: url(./fonts/Quicksand-Medium.ttf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    --bg-p:#F4F6FF;
+    --bg-s:#10375C;
+    --yellow:#F3C623;
+}
+.container{
+    font-family: quicksand-medium;
+    background: var(--bg-p);
+    height: 100vh;
+    display: grid;
+    grid-template: 1fr 4fr / minmax(150px, 1fr) minmax(500px, 3fr);
+}
+
+/* HEADER */
+.header{
+   grid-column: 2/3;
+}
+
+/* SIDEBAR */
+.sidebar{
+    grid-column: 1;
+    grid-row: 1/4;
+    background: var(--bg-s);
+}
+
+/* ARTICLE */
+.article{
+    grid-column: 2;
+    grid-row: 2/4;
+    background-color: var(--yellow);
+}
