@@ -1,3 +1,6 @@
+/* Author: NANDRASANTSOA Stéphan Gabriel 
+   today friday 07th february 2025 
+*/
 @font-face {
     font-family: quicksand-bold;
     src: url(./fonts/Quicksand-Bold.ttf);
@@ -23,10 +26,10 @@ body{
     font-family: quicksand-medium;
     background: var(--bg-p);
     display: grid;
-    grid-template: 1fr 4fr / minmax(200px, 1fr) minmax(500px, 4fr);
+    /* grid-template: 1fr 4fr / minmax(200px, 1fr) minmax(500px, 4fr); */
 }
 
-.logo-container, .menu-item, .search-bar, .user, .notification, .user-bubble, .nav,.trending-items{
+.logo-container, .menu-item, .search-bar, .user, .notification, .user-bubble, .nav,.trending-items {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -56,12 +59,12 @@ body{
     width: var(--small-ico);
 }
 .section-1 .search-bar input{
-    border: none;
+    border: 2px solid var(--bg-s);
     width: 85%;
     font-size: medium;
     border-radius: 10px;
     padding: 5px 8px;
-    background-color: var(--yellow);
+    background-color: var(--bg-p);
     font-family: quicksand-medium;
 }
 .section-1 .user img{
@@ -97,6 +100,8 @@ body{
     transition: .3s;
 }
 .section-2 button:hover{
+    background: var(--yellow);
+    color: var(--bg-s);
     transform: translateY(-3px);
 }
 
@@ -124,6 +129,15 @@ body{
     gap:20px;
     padding: 20px;
 }
+.menu-item{
+    transition: .3s;
+}
+
+.menu-item:hover{
+    transform: translateX(6px);
+    filter: invert(37%) sepia(100%) saturate(432%) hue-rotate(0deg);
+}
+
 .menu-item img
 {
     filter: invert(1);
@@ -151,11 +165,22 @@ body{
     gap: var(--std-gap); 
 }
 .card{
+    position: relative;
     background: white;
     padding: var(--std-gap);
     border-radius: 8px;
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: #F3C623; /* Couleur jaune */
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 .card, .article-box{
    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
@@ -165,6 +190,7 @@ body{
     align-self: end;
 }
 .card-title{
+    text-transform: capitalize;
     color: var(--bg-s);
 }
 .card-content{
@@ -176,6 +202,11 @@ body{
 }
 .card-btn img{
     padding: 0 8px ;
+    transition: ease-out .3s;
+}
+.card-btn img:hover{
+    transform: scale(1.2);
+    filter: invert(50%) sepia(100%) saturate(432%) hue-rotate(10deg);
 }
 .article-section-2{
     display: flex;
@@ -204,7 +235,51 @@ body{
     padding:var(--std-gap);
 }
 
+.footer {
+    grid-column: 1/3;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0px -1px 3px 0px #cecece;
+}
+
+.footer a {
+    color: var(--bg-s);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .footer-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
 @media (max-width:800px) {
+    .header{
+        height: min-content;
+    }
+    .header .section-1, .header .section-2{
+        height: 150px;
+    }
     .article{
         grid-template-columns: 1fr;
     }
