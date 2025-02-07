@@ -12,7 +12,9 @@ body{
     padding: 0;
     --bg-p:#F4F6FF;
     --bg-s:#006769;
+    --lightgreen:#40A578;
     --yellow:#F3C623;
+    --width-logo:34px;
     --small-ico:22px;
     --big-ico:28px;
     --std-gap:12px;
@@ -20,9 +22,8 @@ body{
 .container{
     font-family: quicksand-medium;
     background: var(--bg-p);
-    height: 100vh;
     display: grid;
-    grid-template: 1fr 4fr / minmax(200px, 1fr) minmax(500px, 3fr);
+    grid-template: 1fr 4fr / minmax(200px, 1fr) minmax(500px, 4fr);
 }
 
 .logo-container, .menu-item, .search-bar, .user, .notification, .user-bubble, .nav,.trending-items{
@@ -101,14 +102,13 @@ body{
 
 /* SIDEBAR */
 .logo-container{
-    /* justify-content: center; */
     font-size: 2rem;
     padding: 20px;
 }
 
 .logo{
     filter: invert(1);
-    width: 15%;
+    width: var(--width-logo);
 }
 
 .sidebar{
@@ -132,32 +132,80 @@ body{
 
 /* ARTICLE */
 .article{
+    margin-top: var(--std-gap);
     grid-column: 2;
     grid-row: 2/4;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(480px, 1fr));
+    grid-template-columns: 2fr 1fr;
+    gap: var(--std-gap); 
+}
+.article .section-title{
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .project-content{
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--std-gap);
+    display:grid;
+    margin-top: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: var(--std-gap); 
 }
 .card{
     background: white;
     padding: var(--std-gap);
     border-radius: 8px;
-    width: 250px;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+.card, .article-box{
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
+}
+.card-title, .an-title, .author{
+    font-weight: bold;
+    align-self: end;
 }
 .card-title{
-    font-weight: bold;
+    color: var(--bg-s);
 }
 .card-content{
-    font-size: small;
+    font-size: .9em;
     margin-top: 8px;
+}
+.card-btn {
+    justify-self: end;
+}
+.card-btn img{
+    padding: 0 8px ;
 }
 .article-section-2{
     display: flex;
     flex-direction: column;
     gap: var(--std-gap);
+}
+.trending{
+    margin-top: var(--std-gap);
+}
+.article-box{
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.an-title,.article-box p{
+    font-size: small;
+}
+
+.article-box p, .treding-message p {
+    margin: 0;
+    padding: 5px 0;
+    color: var(--lightgreen);
+}
+.treding-message{
+    padding:var(--std-gap);
+}
+
+@media (max-width:800px) {
+    .article{
+        grid-template-columns: 1fr;
+    }
 }
